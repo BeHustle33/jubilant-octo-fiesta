@@ -4,8 +4,8 @@ use Google\Spreadsheet\DefaultServiceRequest;
 use Google\Spreadsheet\ServiceRequestFactory;
 
 require_once  'vendor/autoload.php';
-require_once ('sources.php');
-require_once ('dbconfig.php');
+require_once 'sources.php';
+require_once 'dbconfig.php';
 
 const TIME_TO_RARE = 60 * 60 * 24 * 90;
 const TIME_TO_LOOSE = 60 * 60 * 24 * 365;
@@ -205,7 +205,7 @@ function getNumbersFromGSheets($salon_name)
             }
         }
         return $numbers;
-    }catch(Exception $e){
+    } catch(Exception $e){
         die ($e->getMessage() . ' ' . $e->getLine() . ' ' . $e->getFile() . ' ' . $e->getCode);
     }
 }
